@@ -1,4 +1,4 @@
-<h1 align="center">ExpressJS - Back End - Ticketing-Web-API</h1>
+<h1 align="center">ExpressJS - Back End - </h1>
 
 an online cinema ticket purchase website that is easy to use for all ages. [More about Express](https://en.wikipedia.org/wiki/Express.js)
 
@@ -33,7 +33,7 @@ PORT=3001
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=
-DB_NAME=ticketing
+DB_NAME=barang
 SMTP_EMAIL= [your email ]
 SMTP_PASSWORD= [your email password]
 ```
