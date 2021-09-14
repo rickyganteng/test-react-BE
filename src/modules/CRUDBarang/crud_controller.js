@@ -1,10 +1,10 @@
 require('dotenv').config()
 const helper = require('../../helpers')
 const crudModel = require('./crud_model')
-const redis = require('redis')
-const client = redis.createClient({
+// const redis = require('redis')
+// const client = redis.createClient({
 
-})
+// })
 
 module.exports = {
   getBarangName: async (req, res) => {
@@ -43,11 +43,11 @@ module.exports = {
       }
       const result = await crudModel.getDataAll(limit, offset, search, sort)
       // simpan data di redis
-      client.setex(
-        `getbarang:${JSON.stringify(req.query)}`,
-        3600,
-        JSON.stringify({ result, pageInfo })
-      )
+      // client.setex(
+      //   `getbarang:${JSON.stringify(req.query)}`,
+      //   3600,
+      //   JSON.stringify({ result, pageInfo })
+      // )
       // console.log('DATA RES', result.length)
       return helper.response(
         res,
@@ -70,7 +70,7 @@ module.exports = {
 
       if (result.length > 0) {
         // simpan data kedalam redis
-        client.setex(`getbarang:${id}`, 3600, JSON.stringify(result))
+        // client.setex(`getbarang:${id}`, 3600, JSON.stringify(result))
         return helper.response(res, 200, `Succes Get Data by Id ${id}`, result)
       } else {
         return helper.response(res, 404, `Data by Id ${id} not Found !`, null)
